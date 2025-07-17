@@ -1,0 +1,11 @@
+file_format: "1"
+id: cornix
+name: Cornix
+type: shield
+url: 
+requires: [nrfmicro_13]
+features:
+  - keys
+siblings:
+  - cornix_left
+  - cornix_right
