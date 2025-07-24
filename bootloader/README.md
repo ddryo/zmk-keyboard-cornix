@@ -2,7 +2,7 @@
 
 由于原RMK固件移除了SoftDevice，在刷入ZMK固件之前，必须先恢复SoftDevice：
 
-1. **先用SoftDevice恢复包刷入**，地址：[bootloader/s140_restore.uf2](./s140_restore.uf2)
+1. **先用SoftDevice恢复包刷入**，地址：[bootloader/s140_restore.uf2](./s140_6.1.1_restore_no_mbr.uf2)
 2. **Recovery模式进入方法**：双击RESET键进入bootloader
 3. **刷入zmk固件**：使用UF2拖拽方式刷入
 
