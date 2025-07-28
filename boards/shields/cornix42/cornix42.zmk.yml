@@ -1,0 +1,16 @@
+file_format: "1"
+id: cornix42
+name: Cornix
+type: shield
+url: 
+requires: [cornix_e73]
+features:
+  - keys
+  - dongle
+  # - underglow
+  # - led
+siblings:
+  - cornix42_left
+  - cornix42_ph_left
+  - cornix42_dongle
+  - cornix42_right

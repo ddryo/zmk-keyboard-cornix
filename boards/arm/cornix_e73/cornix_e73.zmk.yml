@@ -1,0 +1,10 @@
+file_format: "1"
+id: cornix_e73
+name: cornix 1.0
+type: board
+arch: arm
+outputs:
+  - usb
+  - ble
+url: https://github.com/hitsmaxft/zmk-keyboard-cornix
+exposes: [pro_micro]

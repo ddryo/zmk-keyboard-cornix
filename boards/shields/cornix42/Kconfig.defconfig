@@ -1,0 +1,68 @@
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+
+## Main device (left side)
+if SHIELD_CORNIX42_LEFT || SHIELD_CORNIX42_DONGLE
+
+config ZMK_KEYBOARD_NAME
+	default "Cornix"
+
+config ZMK_USB
+	default y 
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+	default y
+
+config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING
+	default y
+
+config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY
+	default y
+
+endif # SHIELD_CORNIX42_LEFT
+
+## Peripheral device (right side)
+if SHIELD_CORNIX42_RIGHT || SHIELD_CORNIX42_PH_LEFT
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default n
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+	default n
+
+config ZMK_USB
+    default n
+
+# Add keyboard debouncing
+config ZMK_KSCAN_DEBOUNCE_PRESS_MS
+    default 5
+config ZMK_KSCAN_DEBOUNCE_RELEASE_MS
+    default 5
+
+endif # SHIELD_CORNIX42_RIGHT
+
+# Common options for both sides
+if SHIELD_CORNIX42_LEFT  || SHIELD_CORNIX42_DONGLE || SHIELD_CORNIX42_PH_LEFT || SHIELD_CORNIX42_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+config ZMK_BLE
+	default y
+
+## disable rgb by default
+config WS2812_STRIP
+	default n
+config ZMK_RGB_UNDERGLOW
+	default n
+config ZMK_RGB_UNDERGLOW_EXT_POWER
+	default n
+
+endif # SHIELD_CORNIX42_LEFT || SHIELD_CORNIX42_RIGHT
+
+
+#vim: set ft=Kconfig

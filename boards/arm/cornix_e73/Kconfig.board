@@ -1,0 +1,8 @@
+# cornix board configuration
+
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config BOARD_CORNIX_E73
+    bool "cornix_e73"
+    depends on SOC_NRF52840_QIAA
