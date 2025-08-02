@@ -4,6 +4,7 @@ This shield has been tested with Cornix using ZMK and provides full split-role c
 
 
 ![image](images/cornix_with_dongle.png)
+![image](images/cornix_layout.png)
 
 ## Supported Hardware: Cornix Split Keyboard
 
