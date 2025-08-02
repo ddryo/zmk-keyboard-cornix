@@ -50,10 +50,14 @@ west update
 
 ```yaml
 include:
-  - board: nrfmicro_13
+  - board: cornix_e73
     shield: cornix_left
-  - board: nrfmicro_13
+    artifact-name: cornix_left
+
+  - board: cornix_e73
     shield: cornix_right
+    artifact-name: cornix_right
+
 ```
 
 ### 4. 构建固件

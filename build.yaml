@@ -29,7 +29,6 @@ include:
     snippet: nrf-dongle studio-rpc-usb-uart
     artifact-name: cornix_dongle
 
-  # ph left
   - board: cornix_e73
     shield: cornix_left
     artifact-name: cornix_left
