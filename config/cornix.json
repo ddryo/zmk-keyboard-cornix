@@ -57,24 +57,6 @@
         { "row": 3, "col": 11, "x":              11.5, "y":                3.38, "label":                    "7,2" },
         { "row": 3, "col": 12, "x":              12.5, "y":                3.55, "label":                    "7,1" },
         { "row": 3, "col": 13, "x":              13.5, "y":                3.55, "label":                    "7,0" }
-      ],
-      "sensors": [
-        {
-          "ref": "left_encoder",
-          "name": "encoder_left",
-          "identifier": "encoder_left",
-          "compatible": "alps,ec11",
-          "label": "LEFT_ENCODER",
-          "enabled": true 
-        },
-        {
-          "ref": "right_encoder",
-          "name": "encoder_right",
-          "identifier": "encoder_right",
-          "compatible": "alps,ec11",
-          "label": "RIGHT_ENCODER",
-          "enabled": true
-        }
       ]
     },
     "LAYOUT_42": {
@@ -134,5 +116,23 @@
         { "row": 3, "col": 13, "x":              13.5, "y":                3.55, "label":                    "7,0" }
       ]
     }
-  }
+  },
+  "sensors": [
+        {
+          "ref": "left_encoder",
+          "name": "encoder_left",
+          "identifier": "encoder_left",
+          "compatible": "alps,ec11",
+          "label": "LEFT_ENCODER",
+          "enabled": true 
+        },
+        {
+          "ref": "right_encoder",
+          "name": "encoder_right",
+          "identifier": "encoder_right",
+          "compatible": "alps,ec11",
+          "label": "RIGHT_ENCODER",
+          "enabled": true
+        }
+      ]
 }
