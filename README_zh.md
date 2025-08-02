@@ -51,7 +51,7 @@ west update
 ```yaml
 include:
   - board: cornix_e73
-    shield: cornix_left
+    shield: cornix_main_left
     artifact-name: cornix_left
 
   - board: cornix_e73
