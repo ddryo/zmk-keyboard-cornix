@@ -16,5 +16,9 @@ manifest:
     - name: zmk-helpers
       remote: urob
       revision: main
+    - name: zmk-dongle-display
+      remote: hitsmaxft
+      revision: main
+      clone-depth: 1
   self:
-    path: .
+    path: config

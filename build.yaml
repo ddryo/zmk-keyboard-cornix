@@ -31,6 +31,10 @@ include:
 
   # ph left
   - board: cornix_e73
+    shield: cornix_left
+    artifact-name: cornix_left
+  # ph left
+  - board: cornix_e73
     shield: cornix_ph_left
     artifact-name: cornix_ph_left
 
