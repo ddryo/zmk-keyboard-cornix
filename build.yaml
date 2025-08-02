@@ -13,15 +13,31 @@
 #
 ---
 include:
-  - board: nrfmicro_13
-    shield: settings_reset
-    artifact-name: reset
 
-  - board: nrfmicro_13
-    shield: cornix_left
+  - board: cornix_e73
+    shield: cornix42_left
     snippet: studio-rpc-usb-uart
-    artifact-name: cornix_left
+    artifact-name: cornix42_left
 
-  - board: nrfmicro_13
+  - board: cornix_e73
+    shield: cornix42_right
+    artifact-name: cornix42_right
+
+
+  - board: cornix_e73
+    shield: cornix_dongle dongle_display
+    snippet: nrf-dongle studio-rpc-usb-uart
+    artifact-name: cornix_dongle
+
+  # ph left
+  - board: cornix_e73
+    shield: cornix_ph_left
+    artifact-name: cornix_ph_left
+
+  - board: cornix_e73
     shield: cornix_right
     artifact-name: cornix_right
+
+  - board: cornix_e73
+    shield: settings_reset
+    artifact-name: reset

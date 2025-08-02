@@ -3,7 +3,7 @@
 
 
 ## Main device (left side)
-if SHIELD_CORNIX_LEFT
+if SHIELD_CORNIX_MAIN_LEFT || SHIELD_CORNIX_DONGLE
 
 config ZMK_KEYBOARD_NAME
 	default "Cornix"
@@ -26,7 +26,7 @@ config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY
 endif # SHIELD_CORNIX_LEFT
 
 ## Peripheral device (right side)
-if SHIELD_CORNIX_RIGHT
+if SHIELD_CORNIX_RIGHT || SHIELD_CORNIX_PH_LEFT
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default n
@@ -46,7 +46,7 @@ config ZMK_KSCAN_DEBOUNCE_RELEASE_MS
 endif # SHIELD_CORNIX_RIGHT
 
 # Common options for both sides
-if SHIELD_CORNIX_LEFT || SHIELD_CORNIX_RIGHT
+if SHIELD_CORNIX_MAIN_LEFT  || SHIELD_CORNIX_DONGLE || SHIELD_CORNIX_PH_LEFT || SHIELD_CORNIX_RIGHT
 
 config ZMK_SPLIT
 	default y
@@ -54,5 +54,15 @@ config ZMK_SPLIT
 config ZMK_BLE
 	default y
 
+## disable rgb by default
+config WS2812_STRIP
+	default n
+config ZMK_RGB_UNDERGLOW
+	default n
+config ZMK_RGB_UNDERGLOW_EXT_POWER
+	default n
 
 endif # SHIELD_CORNIX_LEFT || SHIELD_CORNIX_RIGHT
+
+
+#vim: set ft=Kconfig

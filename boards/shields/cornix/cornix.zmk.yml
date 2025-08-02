@@ -3,9 +3,14 @@ id: cornix
 name: Cornix
 type: shield
 url: 
-requires: [nrfmicro_13]
+requires: [cornix_e73]
 features:
   - keys
+  - dongle
+  - encoder
+  # - led
 siblings:
-  - cornix_left
+  - cornix_main_left
+  - cornix_dongle
+  - cornix_ph_left
   - cornix_right
