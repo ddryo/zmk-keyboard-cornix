@@ -47,16 +47,26 @@
               just
               yq # Make sure yq resolves to python-yq.
               tio
-              #pkgs.svgexport
 
               # poetry build error
               keymap_drawer
-              clang-tools
-              #ctags
-
             ];
+            #export env variables and print
 
+            #never export ZEPHYR_BASE, it is set by west
             shellHook = ''
+
+
+ZMK_LIB_PREFIX=${"$"}{ZMK_LIB_PREFIX:=zmk_exts}
+
+ZEPHYR_BASE=$(west config 'zephyr.base')
+LIB_BASE_DIR="$(dirname "$ZEPHYR_BASE")"
+
+Zephyr_DIR=$ZEPHYR_BASE/share/zephyr-package/cmake/
+
+export ZMK_LIB_PREFIX
+export Zephyr_DIR
+echo "use lib prefix $ZMK_LIB_PREFIX"
             '';
           };
         });
