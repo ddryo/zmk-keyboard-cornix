@@ -25,6 +25,8 @@ Cornix is a Corne‑inspired split ergonomic keyboard featuring a compact 3×6 c
 
 The original RMK firmware removed the SoftDevice, so before flashing `zmk.uf2`, you need to restore the SoftDevice first. For specific steps, please refer to [bootloader/README.md](./bootloader/README.md).
 
+> You can rollback to stock firmware by flash orgin uf2 file, backup files under rmkfw/
+
 ## How to build Cornix Zmk firmware from scratch
 
 This section will guide you through building the Cornix ZMK firmware from scratch using the official ZMK firmware development process.
