@@ -83,7 +83,6 @@ zephyr_udc0: &usbd {
 
 
 
-// copy from nrf52840-nosd
 &flash0 {
     partitions {
         compatible = "fixed-partitions";
@@ -100,14 +99,14 @@ zephyr_udc0: &usbd {
         /*
          * The flash starting at 0x000d4000 and ending at
          * 0x000f3fff is reserved for use by the application.
-         */
-
-        /*
-         * Storage partition will be used by FCB/LittleFS/NVS
-         * if enabled.
+         * It will be used by FCB/LittleFS/NVS if enabled.
          */
         storage_partition: partition@d4000 {
             reg = <DT_SIZE_K(848) DT_SIZE_K(128)>;
+        };
+
+        boot_partition: partition@f4000 {
+            reg = <DT_SIZE_K(976) DT_SIZE_K(48)>;
         };
     };
 };
