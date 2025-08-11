@@ -6,6 +6,13 @@ This shield has been tested with Cornix using ZMK and provides full split-role c
 ![image](images/cornix_with_dongle.png)
 ![image](images/cornix_layout.png)
 
+
+## progress
+
+- [x] 52 keys full layout keymap
+- [ ] ec11 encoder
+- [ ] rgb
+
 ## Supported Hardware: Cornix Split Keyboard
 
 Cornix Split Tented Low‑Profile Ergo Keyboard (Jezail Funder)
