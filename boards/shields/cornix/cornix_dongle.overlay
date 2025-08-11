@@ -18,6 +18,13 @@
         rows = <0>;
         events = <0>;
     };
+    //empty sensor to enable zmk keymap CONFIG_ZMK_KEYMAP_SENSORS 
+    sensors: sensors {
+        status = "okay";
+        compatible = "zmk,keymap-sensors";
+        sensors = <>;
+        triggers-per-rotation = <20>;
+    };
 };
 
 &pinctrl {
@@ -36,6 +43,7 @@
         };
     };	
 }; 
+
 
 &i2c0 {
 	status = "okay";
