@@ -42,6 +42,15 @@ now boards/arm/cornix_e73 use no-SD flashing, so you can flash it directly.
 
 This section will guide you through building the Cornix ZMK firmware from scratch using the official ZMK firmware development process.
 
+
+## about RGB
+
+Cornix shield has 2 RGB LEDs on each side, controled by PWM in the stock firmware.
+
+The replacement solution is adapting the RGB indicator module to light up these RGBs, to achieve the same effect as the stock firmware, which uses the RGB LEDs to indicate battery status and connection status. 
+
+But it is not supported yet in this repository.  PR is welcome!
+
 ### Prerequisites
 
 Before starting, ensure you have the following:

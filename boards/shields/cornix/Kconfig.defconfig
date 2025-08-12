@@ -37,6 +37,16 @@ config ZMK_SPLIT_BLE_ROLE_CENTRAL
 config ZMK_USB
     default n
 
+if ZMK_BACKLIGHT
+
+config PWM
+    default y
+
+config LED_PWM
+    default y
+
+endif # ZMK_BACKLIGHT
+
 # Add keyboard debouncing
 config ZMK_KSCAN_DEBOUNCE_PRESS_MS
     default 5
