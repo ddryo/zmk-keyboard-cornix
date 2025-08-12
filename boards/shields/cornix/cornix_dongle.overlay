@@ -7,6 +7,7 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include "cornix-layouts.dtsi"
 
+#include "cornix_sensors.dtsi"
 /{
     chosen {
         zmk,kscan = &mock_kscan;
@@ -17,13 +18,6 @@
         columns = <0>;
         rows = <0>;
         events = <0>;
-    };
-    //empty sensor to enable zmk keymap CONFIG_ZMK_KEYMAP_SENSORS 
-    sensors: sensors {
-        status = "okay";
-        compatible = "zmk,keymap-sensors";
-        sensors = <>;
-        triggers-per-rotation = <20>;
     };
 };
 

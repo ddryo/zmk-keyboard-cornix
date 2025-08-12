@@ -9,8 +9,8 @@ This shield has been tested with Cornix using ZMK and provides full split-role c
 
 ## progress
 
-- [x] 52 keys full layout keymap
-- [ ] ec11 encoder
+- [x] 52 keys full layout keymap, since v2.0
+- [x] ec11 encoder, since v2.2
 - [ ] rgb
 
 ## Supported Hardware: Cornix Split Keyboard
@@ -42,7 +42,7 @@ This section will guide you through building the Cornix ZMK firmware from scratc
 
 Before starting, ensure you have the following:
 - A GitHub account
-- Git installed on your system
+ Git installed on your system
 - Basic understanding of Git and GitHub
 - Your Cornix keyboard PCBs ready
 

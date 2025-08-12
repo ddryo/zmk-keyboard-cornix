@@ -1,6 +1,0 @@
-
-name: nrf-dongle
-append:
-  # DTS_EXTRA_CPPFLAGS: -DZMK_BEHAVIORS_KEEP_ALL
-  EXTRA_DTC_OVERLAY_FILE: nrf-dongle.overlay
-  EXTRA_CONF_FILE: nrf-dongle.conf
