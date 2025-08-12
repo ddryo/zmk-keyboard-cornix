@@ -4,8 +4,9 @@
 
 ## Bootloader恢复说明
 
-原版RMK固件移除了SoftDevice，因此在刷新`zmk.uf2`之前，需要先恢复SoftDevice。具体步骤请参考[bootloader/README.md](./bootloader/README.md)。
+--原版RMK固件移除了SoftDevice，因此在刷新`zmk.uf2`之前，需要先恢复SoftDevice。具体步骤请参考[bootloader/README.md](./bootloader/README.md)。 --
 
+不再需要, 已经使用 no-sd 的分区格式.
 
 ##
 
@@ -67,5 +68,5 @@ include:
 ### 5. 刷入固件
 
 将生成的`.uf2`文件刷入对应的microcontroller：
-- 左半部分：`build/left/zephyr/zmk.uf2`
-- 右半部分：`build/right/zephyr/zmk.uf2`
+- 左半部分：`cornix_left_main.uf2`
+- 左半部分：`cornix_right.uf2`

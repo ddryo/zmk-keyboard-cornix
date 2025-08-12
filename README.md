@@ -6,11 +6,11 @@ This shield has been tested with Cornix using ZMK and provides full split-role c
 ![image](images/cornix_with_dongle.png)
 ![image](images/cornix_layout.png)
 
-
-## progress
+## TODO LIST
 
 - [x] 52 keys full layout keymap, since v2.0
 - [x] ec11 encoder, since v2.2
+- [x] no-SD image, since v2.3
 - [ ] rgb
 
 ## Supported Hardware: Cornix Split Keyboard
@@ -28,9 +28,13 @@ Cornix is a Corne‑inspired split ergonomic keyboard featuring a compact 3×6 c
 
 > this project owner is RMK contributor too, support RMK https://rmk.rs/ please 
 
-## Bootloader Recovery Instructions
+## --Bootloader Recovery Instructions--
 
-The original RMK firmware removed the SoftDevice, so before flashing `zmk.uf2`, you need to restore the SoftDevice first. For specific steps, please refer to [bootloader/README.md](./bootloader/README.md).
+-- The original RMK firmware removed the SoftDevice, so before flashing `zmk.uf2`, you need to restore the SoftDevice first. For specific steps, please refer to [bootloader/README.md](./bootloader/README.md). --
+
+now boards/arm/cornix_e73 use no-SD flashing, so you can flash it directly.
+
+> You may need to reset fw by reset.uf2 from ealier version
 
 > You can rollback to stock firmware by flash orgin uf2 file, backup files under rmkfw/
 
@@ -129,6 +133,11 @@ include:
 ### 4. Build Firmware
 
 Use your preferred method to build
+
+- no need to recovery the sd since 2.3
+- falsh reset.uf2 both side of cornix
+- flash left and right uf2 files
+- reset both side at the same time.
 
 ### 5. Flash Firmware
 
