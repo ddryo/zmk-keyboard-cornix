@@ -1,0 +1,183 @@
+/*
+ * Copyright (c) 2020 Pete Johanson
+ *
+ * SPDX-License-Identifier: MIT
+ */
+/dts-v1/;
+#include <nordic/nrf52840_qiaa.dtsi>
+#include "cornix-pinctrl.dtsi"
+#include "cornix-layouts.dtsi"
+#include "cornix_sensors.dtsi"
+#include <dt-bindings/led/led.h>
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+		zmk,physical-layout = &layout_50;
+    };
+
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        wakeup-source;
+    };
+
+};
+
+&spi1 {
+    status = "disabled";
+
+    compatible = "nordic,nrf-spim";
+
+
+        pinctrl-0 = <&spi1_default>;
+        pinctrl-1 = <&spi1_sleep>;
+        pinctrl-names = "default", "sleep";
+
+    led_strip: ws2812@0 {
+        status = "disabled";
+        compatible = "worldsemi,ws2812-spi";
+
+        /* SPI */
+        reg = <0>; /* ignored, but necessary for SPI bindings */
+        spi-max-frequency = <8000000>;  // 8MHz
+
+        /* WS2812 */
+        chain-length = <2>; 
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+    };
+};
+
+
+
+/ {
+    // rgb_underglow: rgb_underglow {
+    //     status = "okay";
+    //     compatible = "zmk,rgb-underglow";
+    //     label = "RGB";
+    //     chain-length = <2>;
+    //     brightness = <60>;
+    //     effect = "breathing";
+    // };
+    soft_off_wakers {
+        compatible = "zmk,soft-off-wakeup-sources";
+        wakeup-sources = <&kscan0>;
+    };
+
+    aliases {
+        status-ws2812 = &led_strip;
+    };
+    chosen {
+        zmk,bttery = &vbatt;
+		// widget,rgb = &led_strip;
+		// zmk,underglow = &led_strip;
+    };
+
+};
+
+
+/ {
+    model = "cornix";
+    compatible = "hitsmaxft,cornix";
+
+    chosen {
+        zephyr,code-partition = &code_partition;
+        zephyr,sram = &sram0;
+        zephyr,flash = &flash0;
+        zmk,battery = &vbatt;
+    };
+
+    // leds {
+    //     compatible = "gpio-leds";
+    // };
+
+    // Node name must match original "EXT_POWER" label to preserve user settings.
+    // EXT_POWER {
+    //     compatible = "zmk,ext-power-generic";
+    //     control-gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
+    //     init-delay-ms = <50>;
+    // };
+
+    vbatt: vbatt {
+        compatible = "zmk,battery-voltage-divider";
+        io-channels = <&adc 3>;
+        output-ohms = <2000000>;
+        full-ohms = <(2000000 + 806000)>;
+    };
+};
+
+&adc {
+    status = "okay";
+};
+
+&gpiote {
+    status = "okay";
+};
+
+&gpio0 {
+    status = "okay";
+};
+
+&gpio1 {
+    status = "okay";
+};
+
+&i2c0 {
+    compatible = "nordic,nrf-twi";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&spi1 {
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi1_default>;
+    pinctrl-1 = <&spi1_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&uart0 {
+    compatible = "nordic,nrf-uarte";
+    current-speed = <115200>;
+    pinctrl-0 = <&uart0_default>;
+    pinctrl-1 = <&uart0_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+zephyr_udc0: &usbd {
+    status = "okay";
+};
+
+
+
+// copy from nrf52840-nosd
+&flash0 {
+    partitions {
+        compatible = "fixed-partitions";
+        #address-cells = <1>;
+        #size-cells = <1>;
+        sd_partition: partition@0 {
+            reg = <0x0 DT_SIZE_K(4)>;
+        };
+
+        code_partition: partition@1000 {
+            reg = <DT_SIZE_K(4) DT_SIZE_K(844)>;
+        };
+
+        /*
+         * The flash starting at 0x000d4000 and ending at
+         * 0x000f3fff is reserved for use by the application.
+         */
+
+        /*
+         * Storage partition will be used by FCB/LittleFS/NVS
+         * if enabled.
+         */
+        storage_partition: partition@d4000 {
+            reg = <DT_SIZE_K(848) DT_SIZE_K(128)>;
+        };
+    };
+};
