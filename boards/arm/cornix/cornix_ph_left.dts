@@ -4,5 +4,5 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "cornix_left.dts"
+#include "cornix_left_common.dtsi"
 // vim: set ft=dts:

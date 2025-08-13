@@ -6,19 +6,21 @@
 config BOARD_CORNIX
     bool "cornix"
     depends on SOC_NRF52840_QIAA
+
 config BOARD_CORNIX_DONGLE
-    bool "cornix"
+    bool "cornix dongle"
     depends on SOC_NRF52840_QIAA
 
-config BOARD_CORNIX_LEFT
-    bool "cornix_left"
+config BOARD_CORNIX_PH_LEFT
+    bool "cornix ph left"
     depends on SOC_NRF52840_QIAA
+    
 config BOARD_CORNIX_LEFT
-    bool "cornix_left"
+    bool "cornix left"
     depends on SOC_NRF52840_QIAA
 
 config BOARD_CORNIX_RIGHT
-    bool "cornix_right"
+    bool "cornix right"
     depends on SOC_NRF52840_QIAA
 
 #vim: set ft=kconfig:
