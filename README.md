@@ -41,7 +41,7 @@ Cornix is a Corne‑inspired split ergonomic keyboard featuring a compact 3×6 c
 
 -- The original RMK firmware removed the SoftDevice, so before flashing `zmk.uf2`, you need to restore the SoftDevice first. For specific steps, please refer to [bootloader/README.md](./bootloader/README.md). --
 
-now boards/arm/cornix_e73 use no-SD flashing, so you can flash it directly.
+Since v2.3 this board' flash partitions has updated, removed SD (reducing sd partitionsize size from 150K to 4K), so You can flash firmware directly.
 
 > You may need to reset fw by reset.uf2 from ealier version
 
