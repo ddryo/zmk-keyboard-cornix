@@ -154,3 +154,38 @@ Use your preferred method to build
 Flash the generated `.uf2` files to the corresponding microcontroller:
 - Left half: `build/left/zephyr/zmk.uf2`
 - Right half: `build/right/zephyr/zmk.uf2`
+
+## Build This Project Locally (Without west.yaml Dependency)
+
+If you prefer to build this project locally without adding it as a dependency in your west.yaml, you can use the ZMK_EXTRA_MODULES cmake argument.
+
+### Prerequisites
+
+1. Have a working ZMK development environment set up
+2. Clone this repository to a local directory
+
+### Build Steps
+
+1. **Clone this repository**:
+   ```bash
+   git clone https://github.com/hitsmaxft/zmk-shield-cornix.git
+   ```
+
+2. **Configure your ZMK build with the extra module**:
+   
+   Edit your `.west/config` file and add the cmake argument under the `[build]` section:
+   
+   ```ini
+   [build]
+   cmake-args = -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DZMK_EXTRA_MODULES=/full/absolute/path/to/zmk-shield-cornix
+   ```
+   
+   Replace `/full/absolute/path/to/zmk-shield-cornix` with the actual absolute path where you cloned this repository.
+
+3. **Build the firmware**:
+   ```bash
+   west build -b cornix_e73 -- -DSHIELD=cornix_main_left
+   west build -b cornix_e73 -- -DSHIELD=cornix_right
+   ```
+
+This method allows you to use the Cornix shield without modifying your existing ZMK configuration's west.yaml file.
