@@ -3,14 +3,16 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
+#include <nordic/nrf52840_qiaa.dtsi>
 #include <dt-bindings/led/led.h>
-#include "cornix42-layouts.dtsi"
-
+#include "cornix-pinctrl.dtsi"
+#include "cornix-layouts.dtsi"
+#include "cornix_sensors.dtsi"
+#include "nrf_e73.dtsi"
 / {
     chosen {
         zmk,kscan = &kscan0;
-		zmk,physical-layout = &layout_0;
+		zmk,physical-layout = &layout_50;
     };
 
 
@@ -18,13 +20,12 @@
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
         wakeup-source;
-        
     };
 
 };
 
 &spi1 {
-    status = "okay";
+    status = "disabled";
 
     compatible = "nordic,nrf-spim";
 
@@ -34,7 +35,7 @@
         pinctrl-names = "default", "sleep";
 
     led_strip: ws2812@0 {
-        status = "okay";
+        status = "disabled";
         compatible = "worldsemi,ws2812-spi";
 
         /* SPI */
@@ -47,29 +48,9 @@
         spi-zero-frame = <0x40>;
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
     };
-
-    // left_encoder: encoder_left {
-    //     compatible = "alps,ec11";
-    //     a-gpios = <&gpio1 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    //     b-gpios = <&gpio1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    //     steps = <80>;
-    //     status = "okay";
-    // };
-
-    // right_encoder: encoder_right {
-    //     compatible = "alps,ec11";
-    //     a-gpios = <&gpio1 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    //     b-gpios = <&gpio1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    //     steps = <80>;
-    //     status = "okay";
-    // };
-
-    // sensors: sensors {
-    //     compatible = "zmk,keymap-sensors";
-    //     sensors = <&left_encoder &right_encoder>;
-    //     triggers-per-rotation = <20>;
-    // };
 };
+
+
 
 / {
     // rgb_underglow: rgb_underglow {
@@ -90,7 +71,8 @@
     };
     chosen {
         zmk,bttery = &vbatt;
-		widget,rgb = &led_strip;
+		// widget,rgb = &led_strip;
 		// zmk,underglow = &led_strip;
     };
+
 };

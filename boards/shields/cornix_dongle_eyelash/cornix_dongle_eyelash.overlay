@@ -1,11 +1,4 @@
-/*
- * Copyright (c) 2020 Pete Johanson
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "cornix42-layouts.dtsi"
 
 /{
     chosen {
@@ -19,7 +12,7 @@
         events = <0>;
     };
 };
-
+// vim: set ft=dts :
 &pinctrl {
     i2c0_default: i2c0_default {
         group1 {
@@ -36,6 +29,7 @@
         };
     };	
 }; 
+
 
 &i2c0 {
 	status = "okay";
@@ -58,5 +52,5 @@
 	};
 };
 
+//vim: set ft=dts:
 
-// vim: set ft=dts :
