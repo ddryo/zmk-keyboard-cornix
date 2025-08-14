@@ -1,9 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
-#include "../../../boards/arm/cornix/cornix_dongle.overlay"
-#include "../../../boards/arm/cornix/cornix-layouts.dtsi"
-#include "../../../boards/arm/cornix/cornix_sensors.dtsi"
-
 /{
     chosen {
         zmk,kscan = &mock_kscan;
@@ -55,4 +51,6 @@
         prechargep = <0x22>;
 	};
 };
+
+//vim: set ft=dts:
 
