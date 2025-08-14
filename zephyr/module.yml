@@ -1,6 +1,6 @@
+---
+name: zmk-shield-cornix
 build:
-  cmake: 
-  # kconfig: Kconfig
   settings:
     board_root: .
     snippet_root: .
