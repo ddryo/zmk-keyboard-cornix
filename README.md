@@ -11,7 +11,7 @@ This shield has been tested with Cornix using ZMK and provides full split-role c
 - [x] 52 keys full layout keymap, since v2.0
 - [x] ec11 encoder, since v2.2
 - [x] no-SD image, since v2.3
-- [ ] rgb
+- [x] rgb since v3
 
 
 ### about RGB
