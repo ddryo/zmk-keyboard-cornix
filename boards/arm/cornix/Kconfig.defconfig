@@ -16,9 +16,6 @@ if BOARD_CORNIX_LEFT || BOARD_CORNIX_DONGLE
 config ZMK_KEYBOARD_NAME
 	default "Cornix"
 
-config ZMK_USB
-	default y 
-
 if USB
 
 config USB_NRFX
@@ -50,9 +47,6 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
 	default n
-
-config ZMK_USB
-    default n
 
 # Add keyboard debouncing
 config ZMK_KSCAN_DEBOUNCE_PRESS_MS
