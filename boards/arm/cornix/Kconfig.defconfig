@@ -50,9 +50,9 @@ config ZMK_SPLIT_BLE_ROLE_CENTRAL
 
 # Add keyboard debouncing
 config ZMK_KSCAN_DEBOUNCE_PRESS_MS
-    default 5
+    default 3
 config ZMK_KSCAN_DEBOUNCE_RELEASE_MS
-    default 5
+    default 3
 
 endif # BOARD_CORNIX_RIGHT
 
