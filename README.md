@@ -134,12 +134,30 @@ west update
 
 Edit the `build.yaml` file, add:
 
+> [!NOTE]
+> 1. If you are using (default) cornix without dongle, choose "cornix_left", "cornix_right" and "reset".
+> 2. If you are using cornix with dongle, choose "cornix_dongle". "cornix_left_for_dongle", "cornix_right" and "reset".
+> 3. Add "cornix_indicator" shield to enable RGB led light. It consumes much more power, use at your own risk.
+
 ```yaml
 include:
+  # Use cornix with dongle
+  - board: cornix_dongle
+    shield: cornix_dongle_eyelash dongle_display
+    snippet: studio-rpc-usb-uart
+    artifact-name: cornix_dongle
+
+  - board: cornix_ph_left
+    # shield: cornix_indicator
+    artifact-name: cornix_left_for_dongle
+
+  # Use cornix without dongle
   - board: cornix_left
+    # shield: cornix_indicator
     artifact-name: cornix_left
 
   - board: cornix_right
+    # shield: cornix_indicator
     artifact-name: cornix_right
 
   - board: cornix_right
