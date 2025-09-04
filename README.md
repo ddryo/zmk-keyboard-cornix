@@ -104,6 +104,8 @@ remotes:
     url-base: https://github.com/zmkfirmware
   - name: cornix-shield
     url-base: https://github.com/hitsmaxft
+  - name: urob
+    url-base: https://github.com/urob
 ```
 
 Add to the `manifest/projects` section:
@@ -116,6 +118,9 @@ projects:
     import: app/west.yml
   - name: zmk-keyboard-cornix
     remote: cornix-shield
+    revision: main
+  - name: zmk-helpers
+    remote: urob
     revision: main
 ```
 
@@ -131,13 +136,15 @@ Edit the `build.yaml` file, add:
 
 ```yaml
 include:
-  - board: cornix_e73
-    shield: cornix_main_left
+  - board: cornix_left
     artifact-name: cornix_left
 
-  - board: cornix_e73
-    shield: cornix_right
+  - board: cornix_right
     artifact-name: cornix_right
+
+  - board: cornix_right
+    shield: settings_reset
+    artifact-name: reset
 ```
 
 ### 4. Build Firmware
