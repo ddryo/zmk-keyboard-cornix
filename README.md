@@ -15,7 +15,7 @@ so in the project. all board use nosd layout as default
 if you flash firmware into dongle and found it can't work with the original  firmware 
 you have two solutions 
 
-1. （recommend）flash the sd restore uf2 under boooader direcotry（its for nice nano 2 ，but i think it works for most of nrf52840 device）
+1. （recommend）flash the sd restore uf2 under boooader direcotry（its for nice nano 2 ，but i think it works for most of nrf52840 device） other boards https://github.com/hitsmaxft/Adafruit_nRF52_Bootloader/actions/runs/18398554358
 2. build your firmware  with snippet  'nrf
 52840-nosd', make zmk ignore soft device 
 
