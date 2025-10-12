@@ -9,7 +9,7 @@ This community firmwarw has been tested with Cornix using ZMK and provides full 
 
 ## warning：device breakdown recovery
 
-the original cornix use flash layout with softdevice
+the original cornix use flash layout without softdevice
 so in the project. all board use nosd layout as default 
 
 if you flash firmware into dongle and found it can't work with the original  firmware 
