@@ -1,10 +1,24 @@
 # ZMK Keyboard for  Cornix
 
+
 This community firmwarw has been tested with Cornix using ZMK and provides full split-role configuration, battery power management, and Bluetooth central/peripheral setup per ZMK split guidelines
 
 
 ![image](images/cornix_with_dongle.png)
 ![image](images/cornix_layout.png)
+
+## warning：device breakdown recovery
+
+the original cornix use flash layout with softdevice
+so in the project. all board use nosd layout as default 
+
+if you flash firmware into dongle and found it can't work with the original  firmware 
+you have two solutions 
+
+1. （recommend）flash the sd restore uf2 under boooader direcotry（its for nice nano 2 ，but i think it works for most of nrf52840 device）
+2. build your firmware  with snippet  'nrf
+52840-nosd', make zmk ignore soft device 
+
 
 ## TODO LIST
 
@@ -12,6 +26,7 @@ This community firmwarw has been tested with Cornix using ZMK and provides full 
 - [x] ec11 encoder, since v2.2
 - [x] no-SD image, since v2.3
 - [x] rgb since v3
+- support various of dongles
 
 
 ### about RGB
@@ -305,8 +320,8 @@ If you prefer to build this project locally without adding it as a dependency in
 
 3. **Build the firmware**:
    ```bash
-   west build -b cornix_e73 -- -DSHIELD=cornix_main_left
-   west build -b cornix_e73 -- -DSHIELD=cornix_right
+   west build -b cornix_main_left
+   west build -b cornix_right
    ```
 
 This method allows you to use the Cornix shield without modifying your existing ZMK configuration's west.yaml file.
