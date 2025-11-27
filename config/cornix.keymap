@@ -177,10 +177,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESCAPE                &kp Q          &kp W         &kp E         &kp R                          &kp T                                                 &kp Y        &kp U                &kp I                             &kp O         &kp P             &kp TILDE
-&kp LCTRL                 &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D  &hm_shift_l LSHFT F            &kp G                                                 &kp H        &hm_shift_r RSHFT J  &hm_r RGUI K                      &hm_r RALT L  &hm_r RCTRL SEMI  &kp EXCLAMATION
-&kp LEFT_SHIFT            &kp Z          &kp X         &kp C         &kp V                          &kp B            &kp LS(LG(NUMBER_4))  &kp LA(SPACE)  &kp N        &kp M                &kp COMMA                         &kp DOT       &kp FSLH          &kp RIGHT_SHIFT
-&kp LC(LA(LG(NUMBER_1)))  &none          &none         &lt 3 TAB     &thumb_cmd LEFT_COMMAND SPACE  &lt 2 BACKSPACE                                       &lt 3 ENTER  &lt 1 LC(SPACE)      &thumb_cmd RS(RIGHT_COMMAND) TAB  &none         &none             &lt 4 ESCAPE
+&kp ESCAPE            &kp Q          &kp W         &kp E         &kp R                          &kp T                                                 &kp Y        &kp U                &kp I                             &kp O         &kp P             &kp TILDE
+&kp EXCLAMATION       &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D  &hm_shift_l LSHFT F            &kp G                                                 &kp H        &hm_shift_r RSHFT J  &hm_r RGUI K                      &hm_r RALT L  &hm_r RCTRL SEMI  &kp QUESTION
+&kp LEFT_SHIFT        &kp Z          &kp X         &kp C         &kp V                          &kp B            &kp LS(LG(NUMBER_4))  &kp LA(SPACE)  &kp N        &kp M                &kp COMMA                         &kp DOT       &kp FSLH          &kp RIGHT_SHIFT
+&kp LA(LEFT_COMMAND)  &kp LCTRL      &kp LEFT_ALT  &lt 3 TAB     &thumb_cmd LEFT_COMMAND SPACE  &lt 2 BACKSPACE                                       &lt 3 ENTER  &lt 1 LC(SPACE)      &thumb_cmd RS(RIGHT_COMMAND) TAB  &none         &none             &lt 4 ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -218,10 +218,10 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&none  &none         &kp AT     &kp HASH           &kp DLLR  &kp PRCNT                        &kp CARET     &kp AMPS        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE              &trans
-&none  &kp QUESTION  &kp GRAVE  &kp DOUBLE_QUOTES  &kp SQT   &kp EXCLAMATION                  &kp PLUS      &kp MINUS       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp EQUAL             &kp QUESTION
-&none  &none         &none      &none              &none     &none            &trans  &trans  &kp ASTERISK  &kp UNDERSCORE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp NON_US_BACKSLASH  &none
-&none  &none         &none      &trans             &trans    &trans                           &trans        &trans          &trans                &none                  &none                 &none
+&none  &none         &kp AT     &kp HASH           &kp DLLR  &kp PRCNT                        &kp CARET     &kp AMPS        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE       &trans
+&none  &kp QUESTION  &kp GRAVE  &kp DOUBLE_QUOTES  &kp SQT   &kp EXCLAMATION                  &kp PLUS      &kp MINUS       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp EQUAL      &kp QUESTION
+&none  &none         &none      &none              &none     &none            &trans  &trans  &kp ASTERISK  &kp UNDERSCORE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &none
+&none  &none         &none      &trans             &trans    &trans                           &trans        &trans          &trans                &none                  &none          &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
