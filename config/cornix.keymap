@@ -137,44 +137,29 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        adjust_layer {
-            if-layers = <3 2>;
-            then-layer = <4>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 
     combos {
         compatible = "zmk,combos";
 
-        cb_ltm {
-            bindings = <&kp ESC>;
-            key-positions = <2 4>;
-            layers = <0 1>;
+        mission_ctrl {
+            bindings = <&kp LC(UP_ARROW)>;
+            key-positions = <2 4 3>;
         };
 
-        cb_lm {
-            bindings = <&kp TAB>;
-            key-positions = <14 16>;
-            layers = <0 1>;
+        desk_prev {
+            bindings = <&kp LC(LEFT_ARROW)>;
+            key-positions = <14 16 15>;
         };
 
-        cb_enter {
-            bindings = <&kp RET>;
-            key-positions = <21 19>;
-            layers = <0 1>;
+        desk_next {
+            bindings = <&kp LC(RIGHT)>;
+            key-positions = <17 16 15>;
         };
 
-        layer3 {
-            bindings = <&kp N3>;
-            key-positions = <5 6>;
-        };
-
-        layer4 {
-            bindings = <&kp N4>;
-            key-positions = <5 6>;
+        desktop {
+            bindings = <&kp F11>;
+            key-positions = <17 13>;
         };
     };
 
