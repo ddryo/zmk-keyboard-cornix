@@ -159,7 +159,7 @@
 
         desktop {
             bindings = <&kp F11>;
-            key-positions = <17 13>;
+            key-positions = <26 27 28>;
         };
     };
 
@@ -179,11 +179,13 @@
             bindings = <
 &kp ESCAPE            &kp Q          &kp W         &kp E         &kp R                          &kp T                                                 &kp Y        &kp U                &kp I                             &kp O         &kp P             &kp TILDE
 &kp EXCLAMATION       &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D  &hm_shift_l LSHFT F            &kp G                                                 &kp H        &hm_shift_r RSHFT J  &hm_r RGUI K                      &hm_r RALT L  &hm_r RCTRL SEMI  &kp QUESTION
-&kp LEFT_SHIFT        &kp Z          &kp X         &kp C         &kp V                          &kp B            &kp LS(LG(NUMBER_4))  &kp LA(SPACE)  &kp N        &kp M                &kp COMMA                         &kp DOT       &kp FSLH          &kp RIGHT_SHIFT
+&kp LG(LS(Z))         &kp Z          &kp X         &kp C         &kp V                          &kp B            &kp LS(LG(NUMBER_4))  &kp LA(SPACE)  &kp N        &kp M                &kp COMMA                         &kp DOT       &kp FSLH          &kp RIGHT_SHIFT
 &kp LA(LEFT_COMMAND)  &kp LCTRL      &kp LEFT_ALT  &lt 3 TAB     &thumb_cmd LEFT_COMMAND SPACE  &lt 2 BACKSPACE                                       &lt 3 ENTER  &lt 1 LC(SPACE)      &thumb_cmd RS(RIGHT_COMMAND) TAB  &none         &none             &lt 4 ESCAPE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings =
+                <&inc_dec_kp PAGE_UP PAGE_DOWN>,
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         arrow {
@@ -238,10 +240,10 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&none   &kp N7        &kp N8        &kp N9        &none   &none                   &none         &kp N7        &kp N8        &kp N9        &none       &none
-&kp N0  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &none   &none                   &kp PLUS      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp N0      &kp MINUS
-&kp N0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none   &none   &trans  &trans  &kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD  &kp SLASH
-&none   &none         &none         &trans        &trans  &trans                  &trans        &kp N0        &trans        &none         &none       &none
+&none      &none       &kp N7  &kp N8  &kp N9  &none                         &none         &kp N7        &kp N8        &kp N9        &none       &none
+&kp MINUS  &kp N0      &kp N4  &kp N5  &kp N6  &kp PLUS                      &kp PLUS      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp N0      &kp MINUS
+&kp SLASH  &kp PERIOD  &kp N1  &kp N2  &kp N3  &kp ASTERISK  &trans  &trans  &kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD  &kp SLASH
+&none      &none       &none   &trans  &kp N0  &trans                        &trans        &kp N0        &trans        &none         &none       &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
