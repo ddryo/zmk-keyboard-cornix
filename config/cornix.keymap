@@ -230,8 +230,8 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp LG(Z) LG(LS(Z))>;
+                <&inc_dec_kp PAGE_DOWN PG_UP>,
+                <&inc_dec_kp PAGE_DOWN PG_UP>;
         };
 
         Num_layer {
