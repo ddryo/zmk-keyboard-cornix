@@ -164,6 +164,15 @@
         };
     };
 
+    macros {
+        t_claude: t_claude {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp L &kp A &kp U &kp D &kp E>;
+            label = "T_CLAUDE";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -178,10 +187,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESCAPE            &kp Q          &kp W         &kp E         &kp R                          &kp T                                                       &kp Y              &kp U                &kp I                             &kp O         &kp P             &kp TILDE
-&kp LCTRL             &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D  &hm_shift_l LSHFT F            &kp G                                                       &kp H              &hm_shift_r RSHFT J  &hm_r RGUI K                      &hm_r RALT L  &hm_r RCTRL SEMI  &kp QUESTION
-&kp LG(LS(Z))         &kp Z          &kp X         &kp C         &kp V                          &kp B                  &kp LS(LG(NUMBER_4))  &kp LA(SPACE)  &kp N              &kp M                &kp COMMA                         &kp DOT       &kp FSLH          &kp RIGHT_SHIFT
-&kp LA(LEFT_COMMAND)  &kp LCTRL      &kp LEFT_ALT  &lt 3 TAB     &thumb_cmd LEFT_COMMAND SPACE  &thumb_lt 2 BACKSPACE                                       &thumb_lt 3 ENTER  &lt 1 LC(SPACE)      &thumb_cmd RS(RIGHT_COMMAND) TAB  &none         &kp LG(F5)        &lt 4 ESCAPE
+&kp ESCAPE            &kp Q          &kp W         &kp E         &kp R                          &kp T                                                        &kp Y              &kp U                &kp I                             &kp O         &kp P             &kp LA(SPACE)
+&kp LCTRL             &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D  &hm_shift_l LSHFT F            &kp G                                                        &kp H              &hm_shift_r RSHFT J  &hm_r RGUI K                      &hm_r RALT L  &hm_r RCTRL SEMI  &t_claude
+&kp LG(LS(Z))         &kp Z          &kp X         &kp C         &kp V                          &kp B                  &kp LG(LA(LC(NUMBER_4)))  &kp LG(F5)  &kp N              &kp M                &kp COMMA                         &kp DOT       &kp FSLH          &kp LC(LS(NUMBER_2))
+&kp LS(LG(NUMBER_4))  &kp LCTRL      &kp LEFT_ALT  &lt 3 TAB     &thumb_cmd LEFT_COMMAND SPACE  &thumb_lt 2 BACKSPACE                                        &thumb_lt 3 ENTER  &lt 1 LC(SPACE)      &thumb_cmd RS(RIGHT_COMMAND) TAB  &mo 4         &none             &kp LA(LC(LG(NUMBER_1)))
             >;
 
             sensor-bindings =
@@ -223,7 +232,7 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&none  &none         &kp AT     &kp HASH           &kp DLLR       &kp PRCNT                        &kp CARET     &kp AMPS        &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE       &trans
+&none  &kp TILDE     &kp AT     &kp HASH           &kp DLLR       &kp PRCNT                        &kp CARET     &kp AMPS        &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE       &trans
 &none  &kp QUESTION  &kp GRAVE  &kp DOUBLE_QUOTES  &kp SQT        &kp EXCLAMATION                  &kp PLUS      &kp MINUS       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL      &kp QUESTION
 &none  &none         &none      &none              &kp LG(LS(Z))  &kp LG(LS(F))    &trans  &trans  &kp ASTERISK  &kp UNDERSCORE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &none
 &none  &none         &none      &trans             &trans         &trans                           &trans        &trans          &trans                &none                  &none          &none
