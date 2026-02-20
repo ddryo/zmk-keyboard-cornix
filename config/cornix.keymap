@@ -165,11 +165,39 @@
     };
 
     macros {
-        t_claude: t_claude {
+        str_claude: t_claude {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp C &kp L &kp A &kp U &kp D &kp E>;
             label = "T_CLAUDE";
+        };
+
+        vim_: vim_q {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESCAPE &kp COLON>;
+            label = "VIM_Q";
+        };
+
+        vim_qq: vim_qq {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESCAPE &kp COLON &kp Q &kp EXCL>;
+            label = "VIM_QQ";
+        };
+
+        vim_wq: vim_wq {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESCAPE &kp COLON &kp W &kp Q>;
+            label = "VIM_WQ";
+        };
+
+        str_codex: codex {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp O &kp D &kp E &kp X>;
+            label = "CODEX";
         };
     };
 
@@ -187,10 +215,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESCAPE                               &kp Q          &kp W         &kp E                            &kp R                          &kp T                                                        &kp Y              &kp U                &kp I                             &kp O         &kp P             &kp LA(SPACE)
-&mt LCTRL LC(B)                          &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D                     &hm_shift_l LSHFT F            &kp G                                                        &kp H              &hm_shift_r RSHFT J  &hm_r RGUI K                      &hm_r RALT L  &hm_r RCTRL SEMI  &t_claude
-&mt LS(LEFT_COMMAND) LS(LG(Z))           &kp Z          &kp X         &kp C                            &kp V                          &kp B                  &kp LG(LA(LC(NUMBER_4)))  &kp LG(F5)  &kp N              &kp M                &kp COMMA                         &kp DOT       &kp FSLH          &kp LC(LS(NUMBER_2))
-&mt LA(LC(LEFT_COMMAND)) LA(LC(LG(N1)))  &kp LCTRL      &kp LEFT_ALT  &thumb_cmd LA(LEFT_COMMAND) TAB  &thumb_cmd LEFT_COMMAND SPACE  &thumb_lt 2 BACKSPACE                                        &thumb_lt 3 ENTER  &lt 1 LC(SPACE)      &thumb_cmd RS(RIGHT_COMMAND) TAB  &mo 4         &none             &kp LG(LS(N4))
+&kp ESCAPE                               &kp Q          &kp W         &kp E                            &kp R                          &kp T                                           &kp Y              &kp U                &kp I                             &kp O         &kp P             &kp LA(SPACE)
+&str_codex                               &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D                     &hm_shift_l LSHFT F            &kp G                                           &kp H              &hm_shift_r RSHFT J  &hm_r RGUI K                      &hm_r RALT L  &hm_r RCTRL SEMI  &str_claude
+&mt LS(LEFT_COMMAND) LS(LG(Z))           &kp Z          &kp X         &kp C                            &kp V                          &kp B                  &kp LC(F20)  &kp LG(F5)  &kp N              &kp M                &kp COMMA                         &kp DOT       &kp FSLH          &kp LC(LS(NUMBER_2))
+&mt LA(LC(LEFT_COMMAND)) LA(LC(LG(N1)))  &kp LCTRL      &kp LEFT_ALT  &thumb_cmd LA(LEFT_COMMAND) TAB  &thumb_cmd LEFT_COMMAND SPACE  &thumb_lt 2 BACKSPACE                           &thumb_lt 3 ENTER  &lt 1 LC(SPACE)      &thumb_cmd RS(RIGHT_COMMAND) TAB  &mo 4         &none             &kp LG(LS(N4))
             >;
 
             sensor-bindings =
@@ -209,10 +237,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&trans  &trans     &trans        &trans        &trans          &trans                  &trans  &kp HOME          &kp UP_ARROW    &kp END            &none     &trans
-&trans  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &kp LEFT_SHIFT  &trans                  &trans  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW    &mkp MB4  &mkp MB5
-&none   &trans     &trans        &trans        &trans          &trans  &trans  &trans  &trans  &kp LS(LG(LEFT))  &trans          &kp LS(LG(RIGHT))  &none     &none
-&none   &none      &none         &trans        &trans          &trans                  &trans  &trans            &trans          &none              &none     &none
+&trans  &mkp MB4   &mkp MB5      &trans        &trans          &trans                                 &trans              &kp LA(LEFT)      &kp UP_ARROW    &kp LA(RIGHT)      &none          &trans
+&trans  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &kp LEFT_SHIFT  &trans                                 &kp LC(LEFT_ARROW)  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW    &kp LC(RIGHT)  &none
+&none   &trans     &trans        &trans        &trans          &trans                 &trans  &trans  &trans              &kp LS(LG(LEFT))  &trans          &kp LS(LG(RIGHT))  &none          &none
+&none   &none      &none         &trans        &trans          &thumb_lt 5 BACKSPACE                  &trans              &trans            &trans          &none              &none          &none
             >;
 
             sensor-bindings =
@@ -232,9 +260,9 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&none  &kp TILDE     &kp AT     &kp HASH           &kp DLLR       &kp PRCNT                        &kp CARET     &kp AMPS        &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE       &trans
-&none  &kp QUESTION  &kp GRAVE  &kp DOUBLE_QUOTES  &kp SQT        &kp EXCLAMATION                  &kp PLUS      &kp MINUS       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL      &kp QUESTION
-&none  &none         &none      &none              &kp LG(LS(Z))  &kp LG(LS(F))    &trans  &trans  &kp ASTERISK  &kp UNDERSCORE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &none
+&none  &kp TILDE     &kp AT     &kp HASH           &kp DLLR       &kp PRCNT                        &kp CARET     &kp AMPS        &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE       &vim_qq
+&none  &kp QUESTION  &kp GRAVE  &kp DOUBLE_QUOTES  &kp SQT        &kp EXCLAMATION                  &kp PLUS      &kp MINUS       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL      &vim_
+&none  &none         &none      &none              &kp LG(LS(Z))  &kp LG(LS(F))    &trans  &trans  &kp ASTERISK  &kp UNDERSCORE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &vim_wq
 &none  &none         &none      &trans             &trans         &trans                           &trans        &trans          &trans                &none                  &none          &none
             >;
 
@@ -254,10 +282,10 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&none      &none       &kp N7  &kp N8  &kp N9  &none                         &none         &kp N7        &kp N8        &kp N9        &none       &none
-&kp MINUS  &kp N0      &kp N4  &kp N5  &kp N6  &kp PLUS                      &kp PLUS      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp N0      &kp MINUS
-&kp SLASH  &kp PERIOD  &kp N1  &kp N2  &kp N3  &kp ASTERISK  &trans  &trans  &kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD  &kp SLASH
-&none      &none       &none   &trans  &kp N0  &trans                        &trans        &kp N0        &trans        &none         &none       &none
+&none  &none       &kp CARET  &kp PERCENT  &kp DOLLAR  &none                                  &none        &kp N7        &kp N8        &kp N9        &none       &none
+&none  &kp SLASH   &kp ASTRK  &kp PLUS     &kp MINUS   &kp EQUAL                              &kp INT_YEN  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp N0      &none
+&none  &kp PERIOD  &none      &none        &none       &none                  &trans  &trans  &none        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD  &none
+&none  &none       &none      &trans       &trans      &thumb_lt 4 BACKSPACE                  &trans       &trans        &trans        &none         &none       &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -274,10 +302,19 @@
             //                    |         |         |         |         |         | |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR_ALL  &none    &none    &none    &none   &none                   &none   &none   &none   &none   &none    &none
-&bt BT_SEL 0    &kp F1   &kp F2   &kp F3   &kp F4  &kp F5                  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &none
-&bt BT_SEL 1    &kp F11  &kp F12  &kp F13  &none   &none   &trans  &trans  &none   &none   &none   &none   &none    &none
-&bt BT_SEL 2    &none    &none    &none    &none   &none                   &none   &none   &none   &none   &none    &none
+&bt BT_CLR_ALL  &none    &none    &none    &none    &none                    &none  &kp F7  &kp F8  &kp F9  &none    &none
+&bt BT_SEL 0    &kp F11  &kp F12  &kp F13  &kp F14  &kp F15                  &none  &kp F4  &kp F5  &kp F6  &kp F10  &none
+&bt BT_SEL 1    &none    &none    &none    &none    &none    &trans  &trans  &none  &kp F1  &kp F2  &kp F3  &none    &none
+&bt BT_SEL 2    &none    &none    &none    &none    &none                    &none  &none   &none   &none   &none    &none
+            >;
+        };
+
+        mouse {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &kp HOME   &kp PAGE_UP    &kp END    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &kp LC(A)  &kp PAGE_DOWN  &kp LC(E)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans         &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans     &trans         &trans     &trans  &trans
             >;
         };
     };
