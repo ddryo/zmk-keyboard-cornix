@@ -35,7 +35,7 @@ include:
     artifact-name: cornix_left_for_dongle_nosd
 
   - board: cornix_right
-    #shield: cornix_indicator
+    shield: cornix_indicator
     artifact-name: cornix_right_nosd
 
   - board: cornix_right
