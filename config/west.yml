@@ -6,8 +6,6 @@ manifest:
       url-base: https://github.com/hitsmaxft
     - name: urob
       url-base: https://github.com/urob
-    - name: janpfischer
-      url-base: https://github.com/janpfischer
   projects:
     # NOTE: ZMK v0.3 にピン留め（Zephyr 3.5ベース）
     # main ブランチは Zephyr 4.1 にアップデートされており、HWMv2 への移行が必要
@@ -24,14 +22,6 @@ manifest:
       clone-depth: 1
     - name: zmk-rgbled-widget
       remote: hitsmaxft
-      revision: main
-      clone-depth: 1
-    - name: zmk-dongle-display
-      remote: hitsmaxft
-      revision: main
-      clone-depth: 1
-    - name: zmk-dongle-screen
-      remote: janpfischer
       revision: main
       clone-depth: 1
   self:
