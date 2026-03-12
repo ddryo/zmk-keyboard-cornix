@@ -17,6 +17,10 @@
     };
 };
 
+&uicr {
+    nfct-pins-as-gpios;
+};
+
 &adc {
     status = "okay";
 };

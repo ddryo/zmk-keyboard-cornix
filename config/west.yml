@@ -7,12 +7,11 @@ manifest:
     - name: urob
       url-base: https://github.com/urob
   projects:
-    # NOTE: ZMK v0.3 にピン留め（Zephyr 3.5ベース）
-    # main ブランチは Zephyr 4.1 にアップデートされており、HWMv2 への移行が必要
+    # NOTE: ZMK main（Zephyr 4.x / HWMv2）
     # 参考: https://zmk.dev/blog/2025/12/09/zephyr-4-1
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3
+      revision: main
       clone-depth: 1
       import:
         file: app/west.yml

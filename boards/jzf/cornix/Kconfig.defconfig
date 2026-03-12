@@ -1,14 +1,7 @@
-# Electronut Labs Papyr board configuration
+# Cornix board configuration
 
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
-
-if BOARD_CORNIX
-
-config BOARD
-    default "cornix"
-
-endif # BOARD_CORNIX
 
 ## Main device (left side)
 if BOARD_CORNIX_LEFT
@@ -60,9 +53,6 @@ endif # BOARD_CORNIX_RIGHT
 if BOARD_CORNIX_LEFT || BOARD_CORNIX_RIGHT
 
 
-config BT_CTLR
-    default BT
-
 config BOARD_CORNIX_CHARGER
     default y
 
@@ -73,8 +63,6 @@ config ZMK_BLE
 	default y
 
 ## disable rgb by default
-config WS2812_STRIP
-	default n
 config ZMK_RGB_UNDERGLOW
 	default n
 config ZMK_RGB_UNDERGLOW_EXT_POWER
