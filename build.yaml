@@ -27,7 +27,7 @@ include:
     artifact-name: cornix_dongle_screen_nicenano
 
   - board: cornix_left
-    #shield: cornix_indicator
+    shield: cornix_indicator
     artifact-name: cornix_left_default_nosd
 
   - board: cornix_ph_left
