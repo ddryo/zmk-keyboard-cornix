@@ -139,6 +139,16 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 47 48 49>;
             hold-trigger-on-release;
         };
+
+        lt_switch_macro: lt_switch_macro {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_SWITCH_MACRO";
+            bindings = <&mo>, <&ctrl_space>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <120>;
+            quick-tap-ms = <200>;
+        };
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
@@ -215,8 +225,8 @@
                 <&kp LCTRL>;
 
             label = "CTRL_SPACE";
-            wait-ms = <10>;
-            tap-ms = <10>;
+            wait-ms = <30>;
+            tap-ms = <30>;
         };
     };
 
@@ -237,7 +247,7 @@
 &kp ESCAPE     &kp Q          &kp W         &kp E                            &kp R                          &kp T                                     &kp Y              &kp U                 &kp I                             &kp O         &kp P             &kp LA(SPACE)
 &kp LC(SPACE)  &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D                     &hm_shift_l LSHFT F            &kp G                                     &kp H              &hm_shift_r RSHFT J   &hm_r RGUI K                      &hm_r RALT L  &hm_r RCTRL SEMI  &kp LA(LC(LG(NUMBER_1)))
 &str_claude    &kp Z          &kp X         &kp C                            &kp V                          &kp B                  &none  &kp LG(F5)  &kp N              &kp M                 &kp COMMA                         &kp DOT       &kp FSLH          &kp LC(LS(NUMBER_2))
-&kp GLOBE      &kp LCTRL      &kp LEFT_ALT  &thumb_cmd LA(LEFT_COMMAND) TAB  &thumb_cmd LEFT_COMMAND SPACE  &thumb_lt 2 BACKSPACE                     &thumb_lt 3 ENTER  &thumb_lt 1 CAPSLOCK  &thumb_cmd RS(RIGHT_COMMAND) TAB  &mo 4         &none             &kp LG(LS(N4))
+&kp GLOBE      &kp LCTRL      &kp LEFT_ALT  &thumb_cmd LA(LEFT_COMMAND) TAB  &thumb_cmd LEFT_COMMAND SPACE  &thumb_lt 2 BACKSPACE                     &thumb_lt 3 ENTER  &lt_switch_macro 1 0  &thumb_cmd RS(RIGHT_COMMAND) TAB  &mo 4         &none             &kp LG(LS(N4))
             >;
 
             sensor-bindings =
