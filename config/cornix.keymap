@@ -123,9 +123,10 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
             tapping-term-ms = <180>;
             quick-tap-ms = <200>;
+            require-prior-idle-ms = <80>;
         };
 
         thumb_lt: thumb_lt {
