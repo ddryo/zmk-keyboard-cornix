@@ -228,7 +228,7 @@
                 <&kp LCTRL>;
 
             label = "CTRL_SPACE";
-            wait-ms = <30>;
+            wait-ms = <50>;
             tap-ms = <30>;
         };
     };
