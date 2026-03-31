@@ -291,10 +291,10 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&none  &kp TILDE     &kp AT     &kp HASH           &kp DLLR       &kp PRCNT                        &kp CARET     &kp AMPS        &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE       &vim_qq
-&none  &kp QUESTION  &kp GRAVE  &kp DOUBLE_QUOTES  &kp SQT        &kp EXCLAMATION                  &kp PLUS      &kp MINUS       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL      &vim_
-&none  &none         &none      &none              &kp LG(LS(Z))  &kp LG(LS(F))    &trans  &trans  &kp ASTERISK  &kp UNDERSCORE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &vim_wq
-&none  &none         &none      &trans             &trans         &trans                           &trans        &trans          &trans                &none                  &none          &none
+&none  &kp TILDE        &kp AT     &kp HASH           &kp DLLR       &kp PRCNT                      &kp CARET     &kp AMPS        &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE       &vim_qq
+&none  &kp EXCLAMATION  &kp GRAVE  &kp DOUBLE_QUOTES  &kp SQT        &kp QUESTION                   &kp PLUS      &kp MINUS       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL      &vim_
+&none  &none            &none      &none              &kp LG(LS(Z))  &kp LG(LS(F))  &trans  &trans  &kp ASTERISK  &kp UNDERSCORE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &vim_wq
+&none  &none            &none      &trans             &trans         &trans                         &trans        &trans          &trans                &none                  &none          &none
             >;
 
             sensor-bindings =
