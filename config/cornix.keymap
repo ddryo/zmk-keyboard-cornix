@@ -293,7 +293,7 @@
             bindings = <
 &none  &kp TILDE        &kp AT         &kp HASH           &kp DLLR       &kp PRCNT                      &kp CARET     &kp AMPS        &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE       &vim_qq
 &none  &kp EXCLAMATION  &kp GRAVE      &kp DOUBLE_QUOTES  &kp SQT        &kp QUESTION                   &kp PLUS      &kp MINUS       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL      &vim_
-&none  &none            &kp LA(LG(J))  &kp LS(LG(E))      &kp LS(LC(G))  &kp LG(LS(F))  &trans  &trans  &kp ASTERISK  &kp UNDERSCORE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &vim_wq
+&none  &kp LC(GRAVE)    &kp LA(LG(J))  &kp LS(LG(E))      &kp LS(LC(G))  &kp LG(LS(F))  &trans  &trans  &kp ASTERISK  &kp UNDERSCORE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &vim_wq
 &none  &none            &none          &trans             &trans         &trans                         &trans        &trans          &trans                &none                  &none          &none
             >;
 
