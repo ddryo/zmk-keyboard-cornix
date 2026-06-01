@@ -248,8 +248,8 @@
             bindings = <
 &kp ESCAPE     &kp Q          &kp W         &kp E                            &kp R                          &kp T                                     &kp Y              &kp U                  &kp I                    &kp O         &kp P             &kp LA(SPACE)
 &kp LC(SPACE)  &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D                     &hm_shift_l LSHFT F            &kp G                                     &kp H              &hm_shift_r RSHFT J    &hm_r RGUI K             &hm_r RALT L  &hm_r RCTRL SEMI  &kp LA(LC(LG(NUMBER_1)))
-&str_claude    &kp Z          &kp X         &kp C                            &kp V                          &kp B                  &none  &kp LG(F5)  &kp N              &kp M                  &kp COMMA                &kp DOT       &kp FSLH          &kp LC(LS(NUMBER_2))
-&kp GLOBE      &kp LCTRL      &kp LEFT_ALT  &thumb_cmd LC(LEFT_COMMAND) TAB  &thumb_cmd LEFT_COMMAND SPACE  &thumb_lt 2 BACKSPACE                     &thumb_lt 3 ENTER  &thumb_lt 1 LC(SPACE)  &thumb_cmd LS(LGUI) TAB  &mo 4         &none             &kp LG(LS(N4))
+&str_codex     &kp Z          &kp X         &kp C                            &kp V                          &kp B                  &none  &kp LG(F5)  &kp N              &kp M                  &kp COMMA                &kp DOT       &kp FSLH          &kp LC(LS(NUMBER_2))
+&kp GLOBE      &kp LG(LS(Z))  &kp LEFT_ALT  &thumb_cmd LC(LEFT_COMMAND) TAB  &thumb_cmd LEFT_COMMAND SPACE  &thumb_lt 2 BACKSPACE                     &thumb_lt 3 ENTER  &thumb_lt 1 LC(SPACE)  &thumb_cmd LS(LGUI) TAB  &mo 4         &none             &kp LG(LS(N4))
             >;
 
             sensor-bindings =
@@ -291,10 +291,10 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&none  &kp TILDE        &kp AT     &kp HASH           &kp DLLR       &kp PRCNT                      &kp CARET     &kp AMPS        &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE       &vim_qq
-&none  &kp EXCLAMATION  &kp GRAVE  &kp DOUBLE_QUOTES  &kp SQT        &kp QUESTION                   &kp PLUS      &kp MINUS       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL      &vim_
-&none  &none            &none      &none              &kp LG(LS(Z))  &kp LG(LS(F))  &trans  &trans  &kp ASTERISK  &kp UNDERSCORE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &vim_wq
-&none  &none            &none      &trans             &trans         &trans                         &trans        &trans          &trans                &none                  &none          &none
+&none  &kp TILDE        &kp AT         &kp HASH           &kp DLLR       &kp PRCNT                      &kp CARET     &kp AMPS        &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE       &vim_qq
+&none  &kp EXCLAMATION  &kp GRAVE      &kp DOUBLE_QUOTES  &kp SQT        &kp QUESTION                   &kp PLUS      &kp MINUS       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL      &vim_
+&none  &none            &kp LA(LG(J))  &kp LS(LG(E))      &kp LS(LC(G))  &kp LG(LS(F))  &trans  &trans  &kp ASTERISK  &kp UNDERSCORE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &vim_wq
+&none  &none            &none          &trans             &trans         &trans                         &trans        &trans          &trans                &none                  &none          &none
             >;
 
             sensor-bindings =
