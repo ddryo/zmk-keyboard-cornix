@@ -248,8 +248,8 @@
             bindings = <
 &kp ESCAPE     &kp Q          &kp W         &kp E                            &kp R                          &kp T                                     &kp Y              &kp U                  &kp I                    &kp O         &kp P             &kp LA(SPACE)
 &kp LC(SPACE)  &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D                     &hm_shift_l LSHFT F            &kp G                                     &kp H              &hm_shift_r RSHFT J    &hm_r RGUI K             &hm_r RALT L  &hm_r RCTRL SEMI  &kp LA(LC(LG(NUMBER_1)))
-&str_codex     &kp Z          &kp X         &kp C                            &kp V                          &kp B                  &none  &kp LG(F5)  &kp N              &kp M                  &kp COMMA                &kp DOT       &kp FSLH          &kp LC(LS(NUMBER_2))
-&kp GLOBE      &kp LG(LS(Z))  &kp LEFT_ALT  &thumb_cmd LC(LEFT_COMMAND) TAB  &thumb_cmd LEFT_COMMAND SPACE  &thumb_lt 2 BACKSPACE                     &thumb_lt 3 ENTER  &thumb_lt 1 LC(SPACE)  &thumb_cmd LS(LGUI) TAB  &mo 4         &none             &kp LG(LS(N4))
+&kp LS(LG(Z))  &kp Z          &kp X         &kp C                            &kp V                          &kp B                  &none  &kp LG(F5)  &kp N              &kp M                  &kp COMMA                &kp DOT       &kp FSLH          &kp LC(LS(NUMBER_2))
+&kp GLOBE      &str_codex     &str_claude   &thumb_cmd LC(LEFT_COMMAND) TAB  &thumb_cmd LEFT_COMMAND SPACE  &thumb_lt 2 BACKSPACE                     &thumb_lt 3 ENTER  &thumb_lt 1 LC(SPACE)  &thumb_cmd LS(LGUI) TAB  &mo 4         &none             &kp LG(LS(N4))
             >;
 
             sensor-bindings =
